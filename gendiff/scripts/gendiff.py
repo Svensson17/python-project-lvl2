@@ -1,4 +1,7 @@
+from gendiff.get_difference import get_difference
+
 def main():
+    get_difference()
     print("dgdgdgdgdgdgdgd")
 
 
