@@ -1,12 +1,11 @@
-from gendiff.get_difference import get_difference
+from gendiff.get_difference import helper
 
 from gendiff.generate_diff import generate_diff
 
 
 def main():
-    args = get_difference()
-    generate_diff(args.first_argument, args.second_argument)
-    result = generate_diff()
+    args = helper()
+    result = generate_diff(args.first_argument, args.second_argument)
     print(result)
 
 

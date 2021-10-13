@@ -9,14 +9,15 @@ def generate_diff(filename1, filename2):
     result = "{\n"
     for key in sorted(keys):
         if key not in data2:
-            result += " - {}: {}\n".format(key, data1[key])
+            result += "  - {}: {}\n".format(key, data1[key])
         elif key not in data1:
-            pass
+            result += "  + {}: {}\n".format(key, data2[key])
         elif data1[key] != data2[key]:
-            pass
+            result += "  - {}: {}\n".format(key, data1[key])
+            result += "  + {}: {}\n".format(key, data2[key])
         else:
-            pass
-        result += "}"
+            result += "    {}: {}\n".format(key, data1[key])
+    result += "}"
     return result
 
 
