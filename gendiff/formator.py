@@ -24,7 +24,7 @@ def render_stylish(diff, depth=0):
         rows = ["{0}\n". format(render_stylish(child,depth + 1)) for child in children]
         return "{0}    {1}: {{\n{2}{3}}}".format(indent, key, "".join(rows), make_indent(depth + 1))
 
-    if diff_type == "edit":
+    if diff_type == "added":
         return "{0}  + {1}: {2}".format(indent, key, to_string(diff["value"], depth))
 
     if diff_type == "removed":
