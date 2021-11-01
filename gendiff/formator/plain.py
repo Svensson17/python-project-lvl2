@@ -4,7 +4,7 @@ def render_plain(diff, depth=0):
     children = diff.get("children")
     print(key)
     if diff_type == "origin":
-        rows = render_plain(child for child in children)
+        rows = [render_plain(child) for child in children]
         return "\n".join(to_list(rows))
     if diff_type == "nested":
         rows = []

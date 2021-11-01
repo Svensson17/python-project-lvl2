@@ -1,9 +1,12 @@
+from gendiff.formator.plain import render_plain
 INDENT_TYPE = ' '
 INDENT_SIZE = 4
 
 def formator(diff, format_name):
     if format_name == "stylish":
         return render_stylish(diff)
+    if format_name == "plain":
+        return render_plain(diff)
 
 def render_stylish(diff, depth=0):
     diff_type = diff["type"]
@@ -17,8 +20,6 @@ def render_stylish(diff, depth=0):
             render_stylish(child, depth)
         ) for child in children]
         return "{{\n{0}}}".format("".join(rows))
-
-
 
     if diff_type == "nested":
         rows = ["{0}\n". format(render_stylish(child,depth + 1)) for child in children]
