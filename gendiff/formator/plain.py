@@ -13,20 +13,20 @@ def render_plain(diff, depth=0):
             rows.append(render_plain(child))
         return rows
     if diff_type == "added":
-        value = to_string(diff[value])
+        value = to_string(diff['value'])
         return "Property '{0}' was added with value: {1}".format(key, value)
     if diff_type == "removed":
         return "Property '{0}' was removed".format(key)
     if diff_type == "updated":
-        value = to_string(diff[old_value])
-        new_value = to_string(diff[new_value])
+        value = to_string(diff['old_value'])
+        new_value = to_string(diff['new_value'])
         return "Property '{0}' was updated. From {1} to {2}".format(
             key,
             value,
             new_value,
         )
     if diff_type == "unchanged":
-        return[]
+        return []
 
 def to_list(items):
     items_list = []
@@ -39,8 +39,8 @@ def to_list(items):
 def to_string(value_to_string):
     if isinstance(value_to_string, dict):
         return '[complex value]'
-    if isinstance(value_to_string, string):
-        return "'{0}'".format(value_to_str)
+    if isinstance(value_to_string, str):
+        return "'{0}'".format(value_to_string)
     if value_to_string is None:
         return "null"
-    return str(value-to_string.lower())
+    return str(value_to_string).lower()

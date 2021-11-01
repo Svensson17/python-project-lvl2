@@ -1,4 +1,6 @@
 from gendiff.formator.plain import render_plain
+
+from gendiff.formator.json import render_json
 INDENT_TYPE = ' '
 INDENT_SIZE = 4
 
@@ -7,6 +9,8 @@ def formator(diff, format_name):
         return render_stylish(diff)
     if format_name == "plain":
         return render_plain(diff)
+    if format_name == 'json':
+        return render_json(diff)
 
 def render_stylish(diff, depth=0):
     diff_type = diff["type"]
@@ -20,7 +24,6 @@ def render_stylish(diff, depth=0):
             render_stylish(child, depth)
         ) for child in children]
         return "{{\n{0}}}".format("".join(rows))
-
     if diff_type == "nested":
         rows = ["{0}\n". format(render_stylish(child,depth + 1)) for child in children]
         return "{0}    {1}: {{\n{2}{3}}}".format(indent, key, "".join(rows), make_indent(depth + 1))
