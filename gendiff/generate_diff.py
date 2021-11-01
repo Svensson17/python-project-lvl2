@@ -5,7 +5,7 @@ import os
 import yaml
 
 from gendiff.diff import build_diff
-from gendiff.formator import formator
+from gendiff.formator.formator import formator
 
 
 def generate_diff(filename1, filename2):
