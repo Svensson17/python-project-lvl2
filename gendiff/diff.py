@@ -24,13 +24,12 @@ def create(data1, data2=None):
                 "key": key,
                 "value": data1[key]
             })
-        elif isinstance(data1[key], dict):
-            if isinstance(data2[key], dict):
-                result.append({
-                    "type": "nested",
-                    "key": key,
-                    "children": create(data1[key], data2[key])
-                })
+        elif isinstance(data1[key], dict) and isinstance(data2[key], dict):
+            result.append({
+                "type": "nested",
+                "key": key,
+                "children": create(data1[key], data2[key])
+            })
         elif data1[key] != data2[key]:
             result.append({
                 "type": "updated",
