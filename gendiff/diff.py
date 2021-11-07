@@ -48,7 +48,6 @@ def create(data1, data2=None):
 
 
 
-
 def create_list_keys(data1, data2):
     keys1 = list(data1.keys())
     keys2 = list(data2.keys())
