@@ -17,7 +17,6 @@ def render_stylish(diff, depth=0):
     key = diff.get("key")
     indent = make_indent(depth)
     children = diff.get("children")
-    print(key)
     if diff_type == "origin":
         rows = ["{0}{1}\n".format(
             indent,
