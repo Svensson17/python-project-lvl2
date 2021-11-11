@@ -4,6 +4,7 @@ from gendiff.formator.json import render_json
 INDENT_TYPE = ' '
 INDENT_SIZE = 4
 
+
 def formator(diff, format_name):
     if format_name == "stylish":
         return render_stylish(diff)
@@ -11,6 +12,7 @@ def formator(diff, format_name):
         return render_plain(diff)
     if format_name == 'json':
         return render_json(diff)
+
 
 def render_stylish(diff, depth=0):
     diff_type = diff["type"]
@@ -56,8 +58,6 @@ def to_string(value_to_string, depth):
         return "{{\n{0}{1}}}".format("".join(result), indent)
     return value_to_string
 
+
 def make_indent(depth):
     return INDENT_TYPE * INDENT_SIZE * depth
-
-
-

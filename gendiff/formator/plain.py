@@ -27,6 +27,7 @@ def render_plain(diff, depth=0):
     if diff_type == "unchanged":
         return []
 
+
 def to_list(items):
     items_list = []
     if not isinstance(items, list):
@@ -34,6 +35,7 @@ def to_list(items):
     for item in items:
         items_list.extend(to_list(item))
     return items_list
+
 
 def to_string(value_to_string):
     if isinstance(value_to_string, dict):

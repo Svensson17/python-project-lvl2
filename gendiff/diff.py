@@ -4,6 +4,7 @@ def build_diff(data1, data2):
         "children": create(data1, data2)
     }
 
+
 def create(data1, data2=None):
     if not isinstance(data1, dict):
         return data1
@@ -44,7 +45,6 @@ def create(data1, data2=None):
                 "value": data1[key]
             })
     return result
-
 
 
 def create_list_keys(data1, data2):

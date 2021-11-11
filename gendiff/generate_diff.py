@@ -8,7 +8,7 @@ from gendiff.diff import build_diff
 from gendiff.formator.formator import formator
 
 
-def generate_diff(filename1, filename2, format_name= 'stylish'):
+def generate_diff(filename1, filename2, format_name='stylish'):
     _, extension = os.path.splitext(filename1)
     if extension == ".json":
         data1 = json.load(open(filename1))
@@ -33,7 +33,3 @@ def generate_diff(filename1, filename2, format_name= 'stylish'):
     # result += "}"
     diff = build_diff(data1, data2)
     return formator(diff, format_name)
-
-
-
-    
