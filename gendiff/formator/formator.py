@@ -26,7 +26,7 @@ def render_stylish(diff, depth=0):
         ) for child in children]
         return "{{\n{0}}}".format("".join(rows))
     if diff_type == "nested":
-        rows = ["{0}\n". format(render_stylish(child,depth + 1)) for child in children]
+        rows = ["{0}\n". format(render_stylish(child, depth + 1)) for child in children]
         return "{0}    {1}: {{\n{2}{3}}}".format(indent, key, "".join(rows), make_indent(depth + 1))
 
     if diff_type == "added":
@@ -52,7 +52,7 @@ def to_string(value_to_string, depth):
     if isinstance(value_to_string, dict):
         result = []
         indent = make_indent(depth + 1)
-        for key,value_to_string in value_to_string.items():
+        for key, value_to_string in value_to_string.items():
             str_value = to_string(value_to_string, depth + 1)
             result.append("{0}    {1}: {2}\n".format(indent, key, str_value))
         return "{{\n{0}{1}}}".format("".join(result), indent)
