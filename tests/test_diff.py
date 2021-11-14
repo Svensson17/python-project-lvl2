@@ -32,3 +32,4 @@ def test_diff_json():
         json.load(data)
     except Exception as e:
         print('Invalid json')
+        print(e)
