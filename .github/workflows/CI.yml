@@ -26,7 +26,7 @@ jobs:
           make install
       - name: Lint
         run: make lint
- test:
+  test:
     # Name the Job
     name: Test code base
     # Set the type of machine to run on
