@@ -12,6 +12,3 @@ def formator(diff, format_name):
         return render_plain(diff)
     if format_name == 'json':
         return render_json(diff)
-
-
-

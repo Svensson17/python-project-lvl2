@@ -30,5 +30,5 @@ def test_diff_json():
     data = generate_diff(path_file1, path_file2)
     try:
         json.load(data)
-    except:
+    except Exception as e:
         print('Invalid json')

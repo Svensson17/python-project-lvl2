@@ -1,9 +1,3 @@
-import json
-
-import os
-
-import yaml
-
 from gendiff.diff import build_diff
 from gendiff.formator.formator import formator
 from gendiff.read_data import read_data
