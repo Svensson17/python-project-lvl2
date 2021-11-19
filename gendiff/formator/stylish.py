@@ -16,11 +16,9 @@ def render_stylish(diff, depth=0):
             "".join(rows)
         )
     if diff_type == "nested":
-        rows = [
-            "{0}\n". format(
+        rows = ["{0}\n". format(
             render_stylish(child, depth + 1)
-        ) for child in children
-        ]
+        ) for child in children]
         return "{0}    {1}: {{\n{2}{3}}}".format(
             indent,
             key,
