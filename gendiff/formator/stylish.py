@@ -8,12 +8,10 @@ def render_stylish(diff, depth=0):
     indent = make_indent(depth)
     children = diff.get("children")
     if diff_type == "origin":
-        rows = [
-            "{0}{1}\n".format(
+        rows = ["{0}{1}\n".format(
             indent,
             render_stylish(child, depth)
-        ) for child in children
-        ]
+        ) for child in children]
         return "{{\n{0}}}".format(
             "".join(rows)
         )
