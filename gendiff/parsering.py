@@ -1,7 +1,7 @@
 import argparse
 
 
-def helper():
+def parsering():
     parser = argparse.ArgumentParser(description='Generate difference')
     parser.add_argument('first_argument')
     parser.add_argument('second_argument')
@@ -11,5 +11,4 @@ def helper():
         help='set format of output',
         default='stylish'
     )
-    args = parser.parse_args()
-    return args
+    return parser.parse_args()

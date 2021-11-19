@@ -10,6 +10,7 @@ def create(data1, data2=None):
         return data1
     if data2 is None:
         data2 = data1
+
     keys = create_list_keys(data1, data2)
     result = []
     for key in sorted(keys):
