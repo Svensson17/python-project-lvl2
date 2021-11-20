@@ -1,10 +1,10 @@
 import json
-import yaml
 import pytest
 
 from gendiff.generate_diff import generate_diff
 
 test_input_cases = ['json', 'yml']
+
 
 @pytest.mark.parametrize('test_format', test_input_cases)
 def test_gendiff(test_format):
@@ -24,6 +24,4 @@ def test_gendiff(test_format):
     try:
         json.load(data)
     except Exception as e:
-        print('Invalid json')
-        print(e)
-
+        pytest.fail('Invalid json: {}'.format(e))
