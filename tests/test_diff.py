@@ -24,4 +24,4 @@ def test_gendiff(test_format):
     try:
         json.loads(data)
     except Exception as e:
-        pytest.fail('Invalid json: "{}"'.format(e))
+        pytest.fail('Invalid json: {}'.format(e))
