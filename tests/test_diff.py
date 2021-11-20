@@ -1,35 +1,29 @@
 import json
+import yaml
+import pytest
 
 from gendiff.generate_diff import generate_diff
 
+test_input_cases = ['json', 'yml']
 
-def test_gendiff_stylish():
-    path_file1 = './tests/fixtures/file1.json'
-    path_file2 = './tests/fixtures/file2.json'
+@pytest.mark.parametrize('test_format', test_input_cases)
+def test_gendiff(test_format):
+    path_file1 = './tests/fixtures/file1.{}'.format(test_format)
+    path_file2 = './tests/fixtures/file2.{}'.format(test_format)
     assert generate_diff(path_file1, path_file2) == open('./tests/fixtures/result_stylish', 'r').read()
-
-
-def test_gendiff_plain():
-    path_file1 = './tests/fixtures/file1.yml'
-    path_file2 = './tests/fixtures/file2.yml'
-    output_format = 'plain'
     assert generate_diff(
         path_file1,
         path_file2,
-        output_format
+        'plain'
     ) == open(
         './tests/fixtures/'
         'result_plain',
         'r'
     ).read()
-
-
-def test_diff_json():
-    path_file1 = './tests/fixtures/file1.json'
-    path_file2 = './tests/fixtures/file2.json'
     data = generate_diff(path_file1, path_file2)
     try:
         json.load(data)
     except Exception as e:
         print('Invalid json')
         print(e)
+
