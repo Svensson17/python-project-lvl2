@@ -20,7 +20,7 @@ def test_gendiff(test_format):
         'result_plain',
         'r'
     ).read()
-    data = generate_diff(path_file1, path_file2)
+    data = generate_diff(path_file1, path_file2, 'json')
     try:
         json.loads(data)
     except Exception as e:
