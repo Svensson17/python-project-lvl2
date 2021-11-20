@@ -22,6 +22,6 @@ def test_gendiff(test_format):
     ).read()
     data = generate_diff(path_file1, path_file2)
     try:
-        json.load(data)
+        json.loads(data)
     except Exception as e:
         pytest.fail('Invalid json: "{}"'.format(e))
