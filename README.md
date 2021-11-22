@@ -7,4 +7,4 @@
 This is my second project on hexlet.io. Here I have implemented project which finds and shows the difference between files of different types. Descriptions of it you can find below. Have a nice day)
 
 
-[![asciicast](https://asciinema.org/a/w9YgL1D2EvIauEG6wUS8T29NI.svg)](https://asciinema.org/a/w9YgL1D2EvIauEG6wUS8T29NI)
+[![asciicast](https://asciinema.org/a/rXHrYZtmfvkJKt0AEuiuwrilm.svg)](https://asciinema.org/a/rXHrYZtmfvkJKt0AEuiuwrilm)
