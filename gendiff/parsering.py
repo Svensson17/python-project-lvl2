@@ -1,7 +1,7 @@
 import argparse
 
 
-def parsering():
+def parse_data():
     parser = argparse.ArgumentParser(description='Generate difference')
     parser.add_argument('first_argument')
     parser.add_argument('second_argument')
