@@ -1,4 +1,4 @@
-from gendiff.diff import build_diff
+from gendiff.diff import build
 from gendiff.formator.formator import format_data
 from gendiff.read_data import parse
 import os
@@ -13,5 +13,5 @@ def read_data(path):
 def generate_diff(filename1, filename2, format_name='stylish'):
     data1 = read_data(filename1)
     data2 = read_data(filename2)
-    diff = build_diff(data1, data2)
+    diff = build(data1, data2)
     return format_data(diff, format_name)

@@ -1,11 +1,11 @@
-def build_diff(data1, data2):
+def build(data1, data2):
     return {
         "type": "origin",
-        "children": create(data1, data2)
+        "children": build_diff(data1, data2)
     }
 
 
-def create(data1, data2=None):
+def build_diff(data1, data2=None):
     if not isinstance(data1, dict):
         return data1
     if data2 is None:
@@ -30,7 +30,7 @@ def create(data1, data2=None):
             result.append({
                 "type": "nested",
                 "key": key,
-                "children": create(data1[key], data2[key])
+                "children": build_diff(data1[key], data2[key])
             })
         elif data1[key] != data2[key]:
             result.append({
